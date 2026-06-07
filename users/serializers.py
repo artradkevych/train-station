@@ -35,6 +35,7 @@ class CrewSerializer(serializers.ModelSerializer):
             "user",
             "first_name",
             "last_name",
+            "full_name",
         )
 
     def create(self, validated_data):
