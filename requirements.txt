@@ -3,6 +3,7 @@ black==26.5.1
 click==8.4.1
 colorama==0.4.6
 Django==6.0.6
+django-debug-toolbar==6.3.0
 django-filter==25.2
 django-stubs==6.0.5
 django-stubs-ext==6.0.5

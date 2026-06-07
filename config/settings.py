@@ -19,6 +19,7 @@ INSTALLED_APPS = [
     # THIRD-PARTY
     "rest_framework",
     "django_filters",
+    "debug_toolbar",
     # LOCAL
     "users",
     "trains",
@@ -30,6 +31,7 @@ MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
@@ -98,3 +100,7 @@ REST_FRAMEWORK = {
         "rest_framework.authentication.SessionAuthentication",
     ),
 }
+
+INTERNAL_IPS = [
+    "127.0.0.1",
+]
