@@ -29,6 +29,12 @@ class TrainTypeSerializer(serializers.ModelSerializer):
         )
 
 
+class TrainImageSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Train
+        fields = ("id", "image")
+
+
 class TrainSerializer(serializers.ModelSerializer):
     train_type = CreatableSlugRelatedField(
         slug_field="name", queryset=TrainType.objects.all()
@@ -43,4 +49,5 @@ class TrainSerializer(serializers.ModelSerializer):
             "places_in_cargo",
             "train_type",
             "capacity",
+            "image",
         )
