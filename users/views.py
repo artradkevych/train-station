@@ -18,5 +18,5 @@ class ManageUserView(generics.RetrieveUpdateAPIView):
 
 
 class CrewViewSet(viewsets.ModelViewSet):
-    queryset = Crew.objects.all()
+    queryset = Crew.objects.select_related("user")
     serializer_class = CrewSerializer

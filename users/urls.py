@@ -9,7 +9,7 @@ from rest_framework_simplejwt.views import (
 from users.views import CreateUserView, ManageUserView, CrewViewSet
 
 router = SimpleRouter()
-router.register("crew", CrewViewSet)
+router.register("crews", CrewViewSet)
 
 app_name = "users"
 

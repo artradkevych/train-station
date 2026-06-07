@@ -1,3 +1,57 @@
-from django.shortcuts import render
+from django_filters import rest_framework as drf_filters
+from rest_framework import viewsets, filters
 
-# Create your views here.
+from routes.filters import TripFilter
+from routes.models import Station, Route, Trip
+from routes.serializers import (
+    StationSerializer,
+    RouteSerializer,
+    RouteListSerializer,
+    RouteDetailSerializer,
+    TripListSerializer,
+    TripDetailSerializer,
+    TripSerializer,
+)
+from users.permissions import IsAdminOrIfAuthenticatedReadOnly
+
+
+class StationViewSet(viewsets.ModelViewSet):
+    queryset = Station.objects.all()
+    serializer_class = StationSerializer
+    permission_classes = (IsAdminOrIfAuthenticatedReadOnly,)
+
+
+class RouteViewSet(viewsets.ModelViewSet):
+    queryset = Route.objects.select_related("source", "destination")
+    permission_classes = (IsAdminOrIfAuthenticatedReadOnly,)
+
+    def get_serializer_class(self):
+        if self.action == "list":
+            return RouteListSerializer
+
+        if self.action == "retrieve":
+            return RouteDetailSerializer
+
+        return RouteSerializer
+
+
+class TripViewSet(viewsets.ModelViewSet):
+    queryset = Trip.objects.select_related(
+        "route__source", "route__destination", "train"
+    )
+    filter_backends = [
+        filters.OrderingFilter,
+        drf_filters.DjangoFilterBackend,
+    ]
+    ordering_fields = ["departure_time"]
+    filterset_class = TripFilter
+    permission_classes = (IsAdminOrIfAuthenticatedReadOnly,)
+
+    def get_serializer_class(self):
+        if self.action == "list":
+            return TripListSerializer
+
+        if self.action == "retrieve":
+            return TripDetailSerializer
+
+        return TripSerializer
