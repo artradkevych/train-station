@@ -3,7 +3,7 @@ from django.urls import reverse
 from rest_framework import status
 from rest_framework.test import APITestCase
 
-from tests.helpers import sample_user
+from users.tests.helpers import sample_user
 
 User = get_user_model()
 
@@ -36,7 +36,11 @@ class CreateUserViewTests(APITestCase):
         self.assertEqual(res.status_code, status.HTTP_400_BAD_REQUEST)
 
     def test_is_staff_is_read_only(self):
-        payload = {"email": "admin@example.com", "password": "pass1234", "is_staff": True}
+        payload = {
+            "email": "admin@example.com",
+            "password": "pass1234",
+            "is_staff": True,
+        }
         res = self.client.post(CREATE_USER_URL, payload)
 
         self.assertEqual(res.status_code, status.HTTP_201_CREATED)

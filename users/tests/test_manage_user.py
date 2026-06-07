@@ -2,7 +2,7 @@ from django.urls import reverse
 from rest_framework import status
 from rest_framework.test import APITestCase
 
-from tests.helpers import sample_user, get_auth_header
+from users.tests.helpers import sample_user, get_auth_header
 
 ME_URL = reverse("users:manage")
 

@@ -4,7 +4,7 @@ from rest_framework import status
 from rest_framework.test import APITestCase
 
 from users.models import Crew
-from tests.helpers import sample_user, create_crew, get_auth_header
+from users.tests.helpers import sample_user, create_crew, get_auth_header
 
 User = get_user_model()
 

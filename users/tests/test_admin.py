@@ -3,7 +3,7 @@ from django.test import TestCase
 
 from users.admin import UserAdmin, CrewAdmin
 from users.models import User, Crew
-from tests.helpers import sample_user, create_crew
+from users.tests.helpers import sample_user, create_crew
 
 
 class UserAdminTests(TestCase):

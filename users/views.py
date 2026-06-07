@@ -1,8 +1,8 @@
 from rest_framework import generics, viewsets
 from rest_framework.permissions import IsAuthenticated
 
-from permissions import IsAdminOrIfAuthenticatedReadOnly
 from users.models import Crew
+from users.permissions import IsAdminOrIfAuthenticatedReadOnly
 from users.serializers import UserSerializer, CrewSerializer
 
 
