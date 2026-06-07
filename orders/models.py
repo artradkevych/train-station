@@ -15,6 +15,9 @@ class Order(models.Model):
         formatted_date = self.created_at.strftime("%Y-%m-%d %H:%M")
         return f"Order №{self.id} ({formatted_date})"
 
+    class Meta:
+        ordering = ["-created_at"]
+
 
 class Ticket(models.Model):
     cargo = models.IntegerField()
@@ -61,3 +64,4 @@ class Ticket(models.Model):
                 name="unique_trip_cargo_seat",
             )
         ]
+        ordering = ["cargo", "seat"]

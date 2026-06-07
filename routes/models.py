@@ -12,6 +12,9 @@ class Station(models.Model):
     def __str__(self) -> str:
         return self.name
 
+    class Meta:
+        ordering = ["name"]
+
 
 class Route(models.Model):
     source = models.ForeignKey(
@@ -25,6 +28,9 @@ class Route(models.Model):
     def __str__(self) -> str:
         return f"Route №{self.id} ({self.distance} km)"
 
+    class Meta:
+        ordering = ["id"]
+
 
 class Trip(models.Model):
     route = models.ForeignKey(Route, on_delete=models.PROTECT, related_name="trips")
@@ -36,3 +42,6 @@ class Trip(models.Model):
     def __str__(self) -> str:
         formatted_time = self.departure_time.strftime("%Y-%m-%d %H:%M")
         return f"Trip №{self.id} (Departure: {formatted_time})"
+
+    class Meta:
+        ordering = ["-departure_time"]

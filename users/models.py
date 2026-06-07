@@ -50,6 +50,9 @@ class User(AbstractUser):
 
     objects = UserManager()
 
+    class Meta:
+        ordering = ["id"]
+
 
 class Crew(models.Model):
     user = models.OneToOneField(
@@ -60,3 +63,6 @@ class Crew(models.Model):
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
+
+    class Meta:
+        ordering = ["last_name", "first_name"]

@@ -7,6 +7,9 @@ class TrainType(models.Model):
     def __str__(self) -> str:
         return self.name
 
+    class Meta:
+        ordering = ["name"]
+
 
 class Train(models.Model):
     name = models.CharField(max_length=255, unique=True)
@@ -16,3 +19,6 @@ class Train(models.Model):
 
     def __str__(self) -> str:
         return self.name
+
+    class Meta:
+        ordering = ["name"]
