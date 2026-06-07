@@ -16,12 +16,22 @@ from users.permissions import IsAdminOrIfAuthenticatedReadOnly
 
 
 class StationViewSet(viewsets.ModelViewSet):
+    """
+    Manage railway stations.
+    Provides endpoints to list, create, and manage geographical train stations and stops.
+    """
+
     queryset = Station.objects.all()
     serializer_class = StationSerializer
     permission_classes = (IsAdminOrIfAuthenticatedReadOnly,)
 
 
 class RouteViewSet(viewsets.ModelViewSet):
+    """
+    Manage geographical routes between stations.
+    Defines connections from a source station to a destination station, including total distance details.
+    """
+
     queryset = Route.objects.select_related("source", "destination")
     permission_classes = (IsAdminOrIfAuthenticatedReadOnly,)
 
@@ -36,6 +46,11 @@ class RouteViewSet(viewsets.ModelViewSet):
 
 
 class TripViewSet(viewsets.ModelViewSet):
+    """
+    Manage train trips and schedules.
+    Provides real-time tracking of active schedules, departure/arrival filtering, and dynamically calculates available tickets and taken seats.
+    """
+
     queryset = (
         Trip.objects.all()
         .select_related("route__source", "route__destination", "train")

@@ -4,10 +4,10 @@ from orders.models import Order
 
 
 class OrderFilter(filters.FilterSet):
-    departure_time = filters.DateFromToRangeFilter(
+    departure_time = filters.DateTimeFromToRangeFilter(
         field_name="tickets__trip__departure_time"
     )
-    arrival_time = filters.DateFromToRangeFilter(
+    arrival_time = filters.DateTimeFromToRangeFilter(
         field_name="tickets__trip__arrival_time"
     )
     trip = filters.NumberFilter(field_name="tickets__trip_id")

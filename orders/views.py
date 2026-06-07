@@ -13,6 +13,11 @@ class OrderViewSet(
     mixins.DestroyModelMixin,
     viewsets.GenericViewSet,
 ):
+    """
+    Manage user orders and ticket purchases.
+    Allows authenticated passengers to view their booking history, cancel orders, or create new ticket reservations.
+    """
+
     queryset = Order.objects.prefetch_related(
         "tickets__trip__route", "tickets__trip__train"
     )

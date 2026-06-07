@@ -4,8 +4,8 @@ from routes.models import Trip
 
 
 class TripFilter(filters.FilterSet):
-    departure_time = filters.DateFromToRangeFilter()
-    arrival_time = filters.DateFromToRangeFilter()
+    departure_time = filters.DateTimeFromToRangeFilter()
+    arrival_time = filters.DateTimeFromToRangeFilter()
 
     class Meta:
         model = Trip

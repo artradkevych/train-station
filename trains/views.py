@@ -1,5 +1,7 @@
+from drf_spectacular.utils import extend_schema
 from rest_framework import viewsets, filters, status
 from rest_framework.decorators import action
+from rest_framework.parsers import MultiPartParser
 from rest_framework.permissions import IsAdminUser
 from rest_framework.response import Response
 
@@ -13,12 +15,22 @@ from users.permissions import IsAdminOrIfAuthenticatedReadOnly
 
 
 class TrainTypeViewSet(viewsets.ModelViewSet):
+    """
+    Manage train types and categories.
+    Provides CRUD operations to define train classifications (e.g., Regional, Intercity, High-Speed).
+    """
+
     queryset = TrainType.objects.all()
     serializer_class = TrainTypeSerializer
     permission_classes = (IsAdminOrIfAuthenticatedReadOnly,)
 
 
 class TrainViewSet(viewsets.ModelViewSet):
+    """
+    Manage the train fleet.
+    Allows managing train instances, viewing their capacity (cargo and seats), and uploading train display images.
+    """
+
     queryset = Train.objects.select_related("train_type")
     filter_backends = [
         filters.SearchFilter,
@@ -32,11 +44,16 @@ class TrainViewSet(viewsets.ModelViewSet):
 
         return TrainSerializer
 
+    @extend_schema(
+        description="Upload an image to a specific train instance.",
+        responses={200: "Image successfully uploaded."},
+    )
     @action(
         methods=["POST"],
         detail=True,
         url_path="upload-image",
-        permission_classes=[IsAdminUser],
+        permission_classes=(IsAdminUser,),
+        parser_classes=[MultiPartParser],  # This forces multipart/form-data in docs
     )
     def upload_image(self, request, pk=None):
         movie = self.get_object()
