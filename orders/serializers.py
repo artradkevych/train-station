@@ -23,12 +23,6 @@ class TicketListSerializer(TicketSerializer):
     trip = TripListSerializer(many=False, read_only=True)
 
 
-class TicketSeatsSerializer(TicketSerializer):
-    class Meta:
-        model = Ticket
-        fields = ("cargo", "seat")
-
-
 class OrderSerializer(serializers.ModelSerializer):
     tickets = TicketSerializer(many=True, read_only=False, allow_empty=False)
 

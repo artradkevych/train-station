@@ -1,5 +1,6 @@
 from rest_framework import serializers
 
+from orders.models import Ticket
 from routes.models import Station, Route, Trip
 from trains.serializers import TrainSerializer
 from users.serializers import CrewSerializer
@@ -79,7 +80,17 @@ class TripListSerializer(serializers.ModelSerializer):
         )
 
 
+class TicketSeatsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Ticket
+        fields = ("cargo", "seat")
+
+
 class TripDetailSerializer(TripSerializer):
     route = RouteDetailSerializer()
     train = TrainSerializer()
     crew = CrewSerializer(many=True)
+    taken_places = TicketSeatsSerializer(source="tickets", many=True, read_only=True)
+
+    class Meta(TripSerializer.Meta):
+        fields = TripSerializer.Meta.fields + ("taken_places",)

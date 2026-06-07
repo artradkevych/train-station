@@ -1,6 +1,6 @@
 from django_filters import rest_framework as drf_filters
 from rest_framework import viewsets, filters
-
+from django.db.models import F, Count
 from routes.filters import TripFilter
 from routes.models import Station, Route, Trip
 from routes.serializers import (
@@ -36,8 +36,15 @@ class RouteViewSet(viewsets.ModelViewSet):
 
 
 class TripViewSet(viewsets.ModelViewSet):
-    queryset = Trip.objects.select_related(
-        "route__source", "route__destination", "train"
+    queryset = (
+        Trip.objects.all()
+        .select_related("route__source", "route__destination", "train")
+        .prefetch_related("crew__user")
+        .annotate(
+            tickets_available=(
+                F("train__cargo_num") * F("train__places_in_cargo") - Count("tickets")
+            )
+        )
     )
     filter_backends = [
         filters.OrderingFilter,
