@@ -6,6 +6,6 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("api-auth/", include("rest_framework.urls")),
     path("api/users/", include("users.urls", namespace="users")),
-    path("api/fleet/", include("trains.urls", namespace="trains")),
-    path("api/routes/", include("routes.urls", namespace="routes")),
+    path("api/railway/fleet/", include("trains.urls", namespace="trains")),
+    path("api/railway/navigation/", include("routes.urls", namespace="routes")),
 ] + debug_toolbar_urls()
