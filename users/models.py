@@ -54,3 +54,8 @@ class Crew(models.Model):
     user = models.OneToOneField(
         User, on_delete=models.CASCADE, related_name="crew_profile"
     )
+    first_name = models.CharField(max_length=255)
+    last_name = models.CharField(max_length=255)
+
+    def __str__(self):
+        return f"{self.first_name} {self.last_name}"
