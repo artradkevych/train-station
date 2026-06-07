@@ -6,11 +6,12 @@ def sample_train_type(name="Regional"):
 
 
 def sample_train(**kwargs):
+    name = kwargs.pop("name", "Express 100")
     defaults = {
-        "name": "Express 100",
         "cargo_num": 5,
         "places_in_cargo": 20,
         "train_type": sample_train_type(),
     }
     defaults.update(kwargs)
-    return Train.objects.create(**defaults)
+    train, _ = Train.objects.get_or_create(name=name, defaults=defaults)
+    return train
