@@ -20,5 +20,9 @@ class Train(models.Model):
     def __str__(self) -> str:
         return self.name
 
+    @property
+    def capacity(self):
+        return self.cargo_num * self.places_in_cargo
+
     class Meta:
         ordering = ["name"]
