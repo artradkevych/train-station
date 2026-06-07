@@ -2,6 +2,7 @@ from django.contrib.auth.models import (
     AbstractUser,
     BaseUserManager,
 )
+from django.conf import settings
 from django.db import models
 from django.utils.translation import gettext as _
 
@@ -52,7 +53,7 @@ class User(AbstractUser):
 
 class Crew(models.Model):
     user = models.OneToOneField(
-        User, on_delete=models.CASCADE, related_name="crew_profile"
+        settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="crew_profile"
     )
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
