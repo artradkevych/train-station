@@ -21,6 +21,13 @@ class RouteSerializer(serializers.ModelSerializer):
         model = Route
         fields = ("id", "source", "destination", "distance")
 
+    def validate(self, attrs):
+        if attrs.get("source") == attrs.get("destination"):
+            raise serializers.ValidationError(
+                {"destination": "Source and destination stations cannot be the same."}
+            )
+        return attrs
+
 
 class RouteListSerializer(RouteSerializer):
     source = serializers.CharField(source="source.name", read_only=True)
