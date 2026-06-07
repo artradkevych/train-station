@@ -8,4 +8,5 @@ urlpatterns = [
     path("api/users/", include("users.urls", namespace="users")),
     path("api/railway/fleet/", include("trains.urls", namespace="trains")),
     path("api/railway/navigation/", include("routes.urls", namespace="routes")),
+    path("api/railway/booking/", include("orders.urls", namespace="orders")),
 ] + debug_toolbar_urls()
