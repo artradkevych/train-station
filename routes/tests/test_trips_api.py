@@ -240,3 +240,51 @@ class TripViewSetTests(APITestCase):
 
         self.assertIn(str(trip.id), str(trip))
         self.assertIn("Departure", str(trip))
+
+    def test_create_trip_with_arrival_before_departure_returns_400(self):
+        crew = create_crew()
+        payload = {
+            "route": self.route.id,
+            "train": self.train.id,
+            "departure_time": "2025-01-01T16:00:00Z",
+            "arrival_time": "2025-01-01T10:00:00Z",
+            "crew": [crew.id],
+        }
+
+        res = self.client.post(TRIP_LIST_URL, payload, format="json", **self.admin_auth)
+
+        self.assertEqual(res.status_code, status.HTTP_400_BAD_REQUEST)
+        self.assertIn("arrival_time", res.data)
+
+    def test_create_trip_with_equal_departure_and_arrival_returns_400(self):
+        crew = create_crew()
+        payload = {
+            "route": self.route.id,
+            "train": self.train.id,
+            "departure_time": "2025-01-01T10:00:00Z",
+            "arrival_time": "2025-01-01T10:00:00Z",
+            "crew": [crew.id],
+        }
+
+        res = self.client.post(TRIP_LIST_URL, payload, format="json", **self.admin_auth)
+
+        self.assertEqual(res.status_code, status.HTTP_400_BAD_REQUEST)
+        self.assertIn("arrival_time", res.data)
+
+    def test_patch_trip_with_invalid_departure_time_returns_400(self):
+        trip = sample_trip(
+            route=self.route,
+            train=self.train,
+            departure_time=timezone.datetime(2025, 1, 1, 10, 0, tzinfo=dt_timezone.utc),
+            arrival_time=timezone.datetime(2025, 1, 1, 16, 0, tzinfo=dt_timezone.utc),
+        )
+
+        res = self.client.patch(
+            trip_detail_url(trip.id),
+            {"departure_time": "2025-01-01T20:00:00Z"},
+            format="json",
+            **self.admin_auth,
+        )
+
+        self.assertEqual(res.status_code, status.HTTP_400_BAD_REQUEST)
+        self.assertIn("arrival_time", res.data)

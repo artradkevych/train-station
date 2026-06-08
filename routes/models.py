@@ -1,4 +1,5 @@
 from django.db import models
+from rest_framework.exceptions import ValidationError
 
 from trains.models import Train
 from users.models import Crew
@@ -42,6 +43,17 @@ class Trip(models.Model):
     def __str__(self) -> str:
         formatted_time = self.departure_time.strftime("%Y-%m-%d %H:%M")
         return f"Trip №{self.id} (Departure: {formatted_time})"
+
+    def clean(self):
+        if self.departure_time and self.arrival_time:
+            if self.departure_time >= self.arrival_time:
+                raise ValidationError(
+                    {"arrival_time": "Arrival time must be after departure time."}
+                )
+
+    def save(self, *args, **kwargs):
+        self.full_clean()
+        super().save(*args, **kwargs)
 
     class Meta:
         ordering = ["-departure_time"]

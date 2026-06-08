@@ -45,6 +45,21 @@ class RouteDetailSerializer(RouteSerializer):
 
 
 class TripSerializer(serializers.ModelSerializer):
+
+    def validate(self, attrs):
+        data = super().validate(attrs)
+        departure = attrs.get(
+            "departure_time", getattr(self.instance, "departure_time", None)
+        )
+        arrival = attrs.get(
+            "arrival_time", getattr(self.instance, "arrival_time", None)
+        )
+        if departure and arrival and departure >= arrival:
+            raise serializers.ValidationError(
+                {"arrival_time": "Arrival time must be after departure time."}
+            )
+        return data
+
     class Meta:
         model = Trip
         fields = (
