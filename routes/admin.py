@@ -28,7 +28,7 @@ class RouteAdmin(admin.ModelAdmin):
         "source__name",
         "destination__name",
     )
-    select_related = (
+    list_select_related = (
         "source",
         "destination",
     )
@@ -39,5 +39,5 @@ class TripAdmin(admin.ModelAdmin):
     list_display = ("id", "route", "train", "departure_time", "arrival_time")
     list_filter = ("train", "route")
     search_fields = ("train__name", "route__source__name", "route__destination__name")
-    select_related = ("train", "route__source", "route__destination")
+    list_select_related = ("train", "route__source", "route__destination")
     filter_horizontal = ("crew",)

@@ -8,7 +8,7 @@ class OrderAdmin(admin.ModelAdmin):
     list_display = ("id", "created_at", "user")
     list_filter = ("created_at",)
     search_fields = ("user__email", "id")
-    select_related = ("user",)
+    list_select_related = ("user",)
 
 
 @admin.register(Ticket)
@@ -19,7 +19,7 @@ class TicketAdmin(admin.ModelAdmin):
         "trip__train__name",
         "order__user__email",
     )
-    select_related = (
+    list_select_related = (
         "trip__train",
         "trip__route",
         "order__user",

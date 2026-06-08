@@ -42,4 +42,4 @@ class UserAdmin(DjangoUserAdmin):
 class CrewAdmin(admin.ModelAdmin):
     list_display = ("last_name", "first_name", "user")
     search_fields = ("last_name", "first_name", "user__email")
-    select_related = ("user",)
+    list_select_related = ("user",)
