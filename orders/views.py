@@ -1,4 +1,5 @@
 from django_filters import rest_framework as drf_filters
+from drf_spectacular.utils import extend_schema
 from rest_framework import viewsets, filters, mixins
 from rest_framework.permissions import IsAuthenticated
 
@@ -7,6 +8,7 @@ from orders.models import Order
 from orders.serializers import OrderSerializer, OrderListSerializer
 
 
+@extend_schema(tags=["Orders"], description="Manage user orders and ticket purchases")
 class OrderViewSet(
     mixins.ListModelMixin,
     mixins.CreateModelMixin,

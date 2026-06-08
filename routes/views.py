@@ -1,6 +1,8 @@
 from django_filters import rest_framework as drf_filters
+from drf_spectacular.utils import extend_schema
 from rest_framework import viewsets, filters
 from django.db.models import F, Count
+
 from routes.filters import TripFilter
 from routes.models import Station, Route, Trip
 from routes.serializers import (
@@ -15,6 +17,7 @@ from routes.serializers import (
 from users.permissions import IsAdminOrIfAuthenticatedReadOnly
 
 
+@extend_schema(tags=["Stations"], description="Manage railway stations and stops")
 class StationViewSet(viewsets.ModelViewSet):
     """
     Manage railway stations.
@@ -26,6 +29,9 @@ class StationViewSet(viewsets.ModelViewSet):
     permission_classes = (IsAdminOrIfAuthenticatedReadOnly,)
 
 
+@extend_schema(
+    tags=["Routes"], description="Manage geographical routes between stations"
+)
 class RouteViewSet(viewsets.ModelViewSet):
     """
     Manage geographical routes between stations.
@@ -38,13 +44,15 @@ class RouteViewSet(viewsets.ModelViewSet):
     def get_serializer_class(self):
         if self.action == "list":
             return RouteListSerializer
-
         if self.action == "retrieve":
             return RouteDetailSerializer
-
         return RouteSerializer
 
 
+@extend_schema(
+    tags=["Trips"],
+    description="Manage train trips and schedules with real-time tracking",
+)
 class TripViewSet(viewsets.ModelViewSet):
     """
     Manage train trips and schedules.
