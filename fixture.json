@@ -365,7 +365,7 @@
     "fields": {
       "email": "admin@admin.com",
       "password": "pbkdf2_sha256$1200000$2UWdaq3D6rYGuUKnGDAQGA$xBwG8gxq+63wGla8d4jZ2eo2K9cJV+5kTpxEKSsH7wg=",
-      "is_staff": false,
+      "is_staff": true,
       "is_superuser": true,
       "is_active": true,
       "date_joined": "2024-01-10T09:00:00Z",

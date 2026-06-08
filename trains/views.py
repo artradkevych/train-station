@@ -56,8 +56,8 @@ class TrainViewSet(viewsets.ModelViewSet):
         parser_classes=[MultiPartParser],  # This forces multipart/form-data in docs
     )
     def upload_image(self, request, pk=None):
-        movie = self.get_object()
-        serializer = self.get_serializer(movie, data=request.data)
+        train = self.get_object()
+        serializer = self.get_serializer(train, data=request.data)
 
         if serializer.is_valid():
             serializer.save()

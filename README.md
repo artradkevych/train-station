@@ -111,6 +111,7 @@ POSTGRES_USER=your_db_user
 POSTGRES_DB=your_db_name
 POSTGRES_HOST=db
 PGDATA=/var/lib/postgresql/data
+SECRET_KEY=your_secret_key
 ```
 
 > When running via Docker, set `POSTGRES_HOST=db` to match the database service name in `docker-compose.yml`.

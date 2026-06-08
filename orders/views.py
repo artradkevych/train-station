@@ -23,6 +23,7 @@ class OrderViewSet(
     )
     filter_backends = [
         filters.OrderingFilter,
+        filters.SearchFilter,
         drf_filters.DjangoFilterBackend,
     ]
     ordering_fields = ["tickets__trip__departure_time"]
