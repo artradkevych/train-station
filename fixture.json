@@ -1,0 +1,932 @@
+[
+  {
+    "model": "trains.traintype",
+    "pk": 1,
+    "fields": {
+      "name": "High-Speed"
+    }
+  },
+  {
+    "model": "trains.traintype",
+    "pk": 2,
+    "fields": {
+      "name": "Intercity"
+    }
+  },
+  {
+    "model": "trains.traintype",
+    "pk": 3,
+    "fields": {
+      "name": "Regional"
+    }
+  },
+  {
+    "model": "trains.traintype",
+    "pk": 4,
+    "fields": {
+      "name": "Freight"
+    }
+  },
+  {
+    "model": "trains.traintype",
+    "pk": 5,
+    "fields": {
+      "name": "Night Express"
+    }
+  },
+  {
+    "model": "trains.traintype",
+    "pk": 6,
+    "fields": {
+      "name": "Suburban"
+    }
+  },
+  {
+    "model": "trains.traintype",
+    "pk": 7,
+    "fields": {
+      "name": "Mountain"
+    }
+  },
+  {
+    "model": "trains.traintype",
+    "pk": 8,
+    "fields": {
+      "name": "Tourist"
+    }
+  },
+  {
+    "model": "trains.traintype",
+    "pk": 9,
+    "fields": {
+      "name": "Luxury"
+    }
+  },
+  {
+    "model": "trains.traintype",
+    "pk": 10,
+    "fields": {
+      "name": "Cargo Express"
+    }
+  },
+  {
+    "model": "trains.train",
+    "pk": 1,
+    "fields": {
+      "name": "Sapsan-1",
+      "cargo_num": 8,
+      "places_in_cargo": 50,
+      "train_type": 1,
+      "image": null
+    }
+  },
+  {
+    "model": "trains.train",
+    "pk": 2,
+    "fields": {
+      "name": "Arrow-2",
+      "cargo_num": 6,
+      "places_in_cargo": 40,
+      "train_type": 2,
+      "image": null
+    }
+  },
+  {
+    "model": "trains.train",
+    "pk": 3,
+    "fields": {
+      "name": "Falcon-3",
+      "cargo_num": 10,
+      "places_in_cargo": 60,
+      "train_type": 1,
+      "image": null
+    }
+  },
+  {
+    "model": "trains.train",
+    "pk": 4,
+    "fields": {
+      "name": "Regional-4",
+      "cargo_num": 4,
+      "places_in_cargo": 30,
+      "train_type": 3,
+      "image": null
+    }
+  },
+  {
+    "model": "trains.train",
+    "pk": 5,
+    "fields": {
+      "name": "NightStar-5",
+      "cargo_num": 12,
+      "places_in_cargo": 36,
+      "train_type": 5,
+      "image": null
+    }
+  },
+  {
+    "model": "trains.train",
+    "pk": 6,
+    "fields": {
+      "name": "Metro-6",
+      "cargo_num": 5,
+      "places_in_cargo": 80,
+      "train_type": 6,
+      "image": null
+    }
+  },
+  {
+    "model": "trains.train",
+    "pk": 7,
+    "fields": {
+      "name": "Alpine-7",
+      "cargo_num": 6,
+      "places_in_cargo": 45,
+      "train_type": 7,
+      "image": null
+    }
+  },
+  {
+    "model": "trains.train",
+    "pk": 8,
+    "fields": {
+      "name": "Heritage-8",
+      "cargo_num": 5,
+      "places_in_cargo": 40,
+      "train_type": 8,
+      "image": null
+    }
+  },
+  {
+    "model": "trains.train",
+    "pk": 9,
+    "fields": {
+      "name": "GoldClass-9",
+      "cargo_num": 4,
+      "places_in_cargo": 20,
+      "train_type": 9,
+      "image": null
+    }
+  },
+  {
+    "model": "trains.train",
+    "pk": 10,
+    "fields": {
+      "name": "CargoMax-10",
+      "cargo_num": 20,
+      "places_in_cargo": 10,
+      "train_type": 10,
+      "image": null
+    }
+  },
+  {
+    "model": "routes.station",
+    "pk": 1,
+    "fields": {
+      "name": "Kyiv Central",
+      "latitude": 50.4401,
+      "longitude": 30.5234
+    }
+  },
+  {
+    "model": "routes.station",
+    "pk": 2,
+    "fields": {
+      "name": "Lviv Main",
+      "latitude": 49.8397,
+      "longitude": 24.0297
+    }
+  },
+  {
+    "model": "routes.station",
+    "pk": 3,
+    "fields": {
+      "name": "Odesa Port",
+      "latitude": 46.4825,
+      "longitude": 30.7233
+    }
+  },
+  {
+    "model": "routes.station",
+    "pk": 4,
+    "fields": {
+      "name": "Kharkiv Central",
+      "latitude": 49.9935,
+      "longitude": 36.2304
+    }
+  },
+  {
+    "model": "routes.station",
+    "pk": 5,
+    "fields": {
+      "name": "Dnipro North",
+      "latitude": 48.4647,
+      "longitude": 35.0462
+    }
+  },
+  {
+    "model": "routes.station",
+    "pk": 6,
+    "fields": {
+      "name": "Zaporizhzhia",
+      "latitude": 47.8388,
+      "longitude": 35.1396
+    }
+  },
+  {
+    "model": "routes.station",
+    "pk": 7,
+    "fields": {
+      "name": "Vinnytsia",
+      "latitude": 49.2331,
+      "longitude": 28.4682
+    }
+  },
+  {
+    "model": "routes.station",
+    "pk": 8,
+    "fields": {
+      "name": "Poltava",
+      "latitude": 49.5883,
+      "longitude": 34.5514
+    }
+  },
+  {
+    "model": "routes.station",
+    "pk": 9,
+    "fields": {
+      "name": "Chernivtsi",
+      "latitude": 48.2921,
+      "longitude": 25.9353
+    }
+  },
+  {
+    "model": "routes.station",
+    "pk": 10,
+    "fields": {
+      "name": "Uzhhorod",
+      "latitude": 48.6208,
+      "longitude": 22.2879
+    }
+  },
+  {
+    "model": "routes.route",
+    "pk": 1,
+    "fields": {
+      "source": 1,
+      "destination": 2,
+      "distance": 540
+    }
+  },
+  {
+    "model": "routes.route",
+    "pk": 2,
+    "fields": {
+      "source": 1,
+      "destination": 3,
+      "distance": 475
+    }
+  },
+  {
+    "model": "routes.route",
+    "pk": 3,
+    "fields": {
+      "source": 1,
+      "destination": 4,
+      "distance": 480
+    }
+  },
+  {
+    "model": "routes.route",
+    "pk": 4,
+    "fields": {
+      "source": 2,
+      "destination": 9,
+      "distance": 270
+    }
+  },
+  {
+    "model": "routes.route",
+    "pk": 5,
+    "fields": {
+      "source": 4,
+      "destination": 5,
+      "distance": 215
+    }
+  },
+  {
+    "model": "routes.route",
+    "pk": 6,
+    "fields": {
+      "source": 5,
+      "destination": 6,
+      "distance": 90
+    }
+  },
+  {
+    "model": "routes.route",
+    "pk": 7,
+    "fields": {
+      "source": 3,
+      "destination": 6,
+      "distance": 75
+    }
+  },
+  {
+    "model": "routes.route",
+    "pk": 8,
+    "fields": {
+      "source": 1,
+      "destination": 7,
+      "distance": 260
+    }
+  },
+  {
+    "model": "routes.route",
+    "pk": 9,
+    "fields": {
+      "source": 2,
+      "destination": 10,
+      "distance": 180
+    }
+  },
+  {
+    "model": "routes.route",
+    "pk": 10,
+    "fields": {
+      "source": 8,
+      "destination": 4,
+      "distance": 145
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 1,
+    "fields": {
+      "email": "admin@admin.com",
+      "password": "pbkdf2_sha256$1200000$2UWdaq3D6rYGuUKnGDAQGA$xBwG8gxq+63wGla8d4jZ2eo2K9cJV+5kTpxEKSsH7wg=",
+      "is_staff": true,
+      "is_superuser": true,
+      "is_active": true,
+      "date_joined": "2024-01-10T09:00:00Z",
+      "first_name": "",
+      "last_name": "",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 2,
+    "fields": {
+      "email": "bob@example.com",
+      "password": "pbkdf2_sha256$1200000$2UWdaq3D6rYGuUKnGDAQGA$xBwG8gxq+63wGla8d4jZ2eo2K9cJV+5kTpxEKSsH7wg=",
+      "is_staff": false,
+      "is_superuser": false,
+      "is_active": true,
+      "date_joined": "2024-01-11T10:00:00Z",
+      "first_name": "",
+      "last_name": "",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 3,
+    "fields": {
+      "email": "carol@example.com",
+      "password": "pbkdf2_sha256$1200000$2UWdaq3D6rYGuUKnGDAQGA$xBwG8gxq+63wGla8d4jZ2eo2K9cJV+5kTpxEKSsH7wg=",
+      "is_staff": false,
+      "is_superuser": false,
+      "is_active": true,
+      "date_joined": "2024-01-12T11:00:00Z",
+      "first_name": "",
+      "last_name": "",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 4,
+    "fields": {
+      "email": "dave@example.com",
+      "password": "pbkdf2_sha256$1200000$2UWdaq3D6rYGuUKnGDAQGA$xBwG8gxq+63wGla8d4jZ2eo2K9cJV+5kTpxEKSsH7wg=",
+      "is_staff": false,
+      "is_superuser": false,
+      "is_active": true,
+      "date_joined": "2024-01-13T08:30:00Z",
+      "first_name": "",
+      "last_name": "",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 5,
+    "fields": {
+      "email": "eva@example.com",
+      "password": "pbkdf2_sha256$1200000$2UWdaq3D6rYGuUKnGDAQGA$xBwG8gxq+63wGla8d4jZ2eo2K9cJV+5kTpxEKSsH7wg=",
+      "is_staff": false,
+      "is_superuser": false,
+      "is_active": true,
+      "date_joined": "2024-01-14T07:45:00Z",
+      "first_name": "",
+      "last_name": "",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 6,
+    "fields": {
+      "email": "frank@example.com",
+      "password": "pbkdf2_sha256$1200000$2UWdaq3D6rYGuUKnGDAQGA$xBwG8gxq+63wGla8d4jZ2eo2K9cJV+5kTpxEKSsH7wg=",
+      "is_staff": true,
+      "is_superuser": false,
+      "is_active": true,
+      "date_joined": "2024-01-15T06:00:00Z",
+      "first_name": "",
+      "last_name": "",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 7,
+    "fields": {
+      "email": "grace@example.com",
+      "password": "pbkdf2_sha256$1200000$2UWdaq3D6rYGuUKnGDAQGA$xBwG8gxq+63wGla8d4jZ2eo2K9cJV+5kTpxEKSsH7wg=",
+      "is_staff": true,
+      "is_superuser": false,
+      "is_active": true,
+      "date_joined": "2024-01-16T05:00:00Z",
+      "first_name": "",
+      "last_name": "",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 8,
+    "fields": {
+      "email": "henry@example.com",
+      "password": "pbkdf2_sha256$1200000$2UWdaq3D6rYGuUKnGDAQGA$xBwG8gxq+63wGla8d4jZ2eo2K9cJV+5kTpxEKSsH7wg=",
+      "is_staff": true,
+      "is_superuser": false,
+      "is_active": true,
+      "date_joined": "2024-01-17T04:00:00Z",
+      "first_name": "",
+      "last_name": "",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 9,
+    "fields": {
+      "email": "irene@example.com",
+      "password": "pbkdf2_sha256$1200000$2UWdaq3D6rYGuUKnGDAQGA$xBwG8gxq+63wGla8d4jZ2eo2K9cJV+5kTpxEKSsH7wg=",
+      "is_staff": true,
+      "is_superuser": false,
+      "is_active": true,
+      "date_joined": "2024-01-18T03:00:00Z",
+      "first_name": "",
+      "last_name": "",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 10,
+    "fields": {
+      "email": "jack@example.com",
+      "password": "pbkdf2_sha256$1200000$2UWdaq3D6rYGuUKnGDAQGA$xBwG8gxq+63wGla8d4jZ2eo2K9cJV+5kTpxEKSsH7wg=",
+      "is_staff": true,
+      "is_superuser": false,
+      "is_active": true,
+      "date_joined": "2024-01-19T02:00:00Z",
+      "first_name": "",
+      "last_name": "",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.crew",
+    "pk": 1,
+    "fields": {
+      "user": 6,
+      "first_name": "Frank",
+      "last_name": "Miller"
+    }
+  },
+  {
+    "model": "users.crew",
+    "pk": 2,
+    "fields": {
+      "user": 7,
+      "first_name": "Grace",
+      "last_name": "Johnson"
+    }
+  },
+  {
+    "model": "users.crew",
+    "pk": 3,
+    "fields": {
+      "user": 8,
+      "first_name": "Henry",
+      "last_name": "Williams"
+    }
+  },
+  {
+    "model": "users.crew",
+    "pk": 4,
+    "fields": {
+      "user": 9,
+      "first_name": "Irene",
+      "last_name": "Brown"
+    }
+  },
+  {
+    "model": "users.crew",
+    "pk": 5,
+    "fields": {
+      "user": 10,
+      "first_name": "Jack",
+      "last_name": "Davis"
+    }
+  },
+  {
+    "model": "users.crew",
+    "pk": 6,
+    "fields": {
+      "user": 1,
+      "first_name": "Alice",
+      "last_name": "Smith"
+    }
+  },
+  {
+    "model": "users.crew",
+    "pk": 7,
+    "fields": {
+      "user": 2,
+      "first_name": "Bob",
+      "last_name": "Jones"
+    }
+  },
+  {
+    "model": "users.crew",
+    "pk": 8,
+    "fields": {
+      "user": 3,
+      "first_name": "Carol",
+      "last_name": "Taylor"
+    }
+  },
+  {
+    "model": "users.crew",
+    "pk": 9,
+    "fields": {
+      "user": 4,
+      "first_name": "Dave",
+      "last_name": "Wilson"
+    }
+  },
+  {
+    "model": "users.crew",
+    "pk": 10,
+    "fields": {
+      "user": 5,
+      "first_name": "Eva",
+      "last_name": "Martinez"
+    }
+  },
+  {
+    "model": "routes.trip",
+    "pk": 1,
+    "fields": {
+      "route": 1,
+      "train": 1,
+      "departure_time": "2025-03-01T06:00:00Z",
+      "arrival_time": "2025-03-01T11:30:00Z",
+      "crew": [
+        1,
+        2
+      ]
+    }
+  },
+  {
+    "model": "routes.trip",
+    "pk": 2,
+    "fields": {
+      "route": 2,
+      "train": 2,
+      "departure_time": "2025-03-02T08:00:00Z",
+      "arrival_time": "2025-03-02T13:00:00Z",
+      "crew": [
+        3,
+        4
+      ]
+    }
+  },
+  {
+    "model": "routes.trip",
+    "pk": 3,
+    "fields": {
+      "route": 3,
+      "train": 3,
+      "departure_time": "2025-03-03T07:30:00Z",
+      "arrival_time": "2025-03-03T12:30:00Z",
+      "crew": [
+        5,
+        6
+      ]
+    }
+  },
+  {
+    "model": "routes.trip",
+    "pk": 4,
+    "fields": {
+      "route": 4,
+      "train": 4,
+      "departure_time": "2025-03-04T09:00:00Z",
+      "arrival_time": "2025-03-04T12:00:00Z",
+      "crew": [
+        7,
+        8
+      ]
+    }
+  },
+  {
+    "model": "routes.trip",
+    "pk": 5,
+    "fields": {
+      "route": 5,
+      "train": 5,
+      "departure_time": "2025-03-05T22:00:00Z",
+      "arrival_time": "2025-03-06T06:00:00Z",
+      "crew": [
+        9,
+        10
+      ]
+    }
+  },
+  {
+    "model": "routes.trip",
+    "pk": 6,
+    "fields": {
+      "route": 6,
+      "train": 6,
+      "departure_time": "2025-03-06T10:00:00Z",
+      "arrival_time": "2025-03-06T11:30:00Z",
+      "crew": [
+        1,
+        3
+      ]
+    }
+  },
+  {
+    "model": "routes.trip",
+    "pk": 7,
+    "fields": {
+      "route": 7,
+      "train": 7,
+      "departure_time": "2025-03-07T14:00:00Z",
+      "arrival_time": "2025-03-07T15:15:00Z",
+      "crew": [
+        2,
+        4
+      ]
+    }
+  },
+  {
+    "model": "routes.trip",
+    "pk": 8,
+    "fields": {
+      "route": 8,
+      "train": 8,
+      "departure_time": "2025-03-08T11:00:00Z",
+      "arrival_time": "2025-03-08T14:30:00Z",
+      "crew": [
+        5,
+        7
+      ]
+    }
+  },
+  {
+    "model": "routes.trip",
+    "pk": 9,
+    "fields": {
+      "route": 9,
+      "train": 9,
+      "departure_time": "2025-03-09T16:00:00Z",
+      "arrival_time": "2025-03-09T19:00:00Z",
+      "crew": [
+        6,
+        8
+      ]
+    }
+  },
+  {
+    "model": "routes.trip",
+    "pk": 10,
+    "fields": {
+      "route": 10,
+      "train": 10,
+      "departure_time": "2025-03-10T05:00:00Z",
+      "arrival_time": "2025-03-10T07:30:00Z",
+      "crew": [
+        9,
+        10
+      ]
+    }
+  },
+  {
+    "model": "orders.order",
+    "pk": 1,
+    "fields": {
+      "created_at": "2025-02-15T10:00:00Z",
+      "user": 1
+    }
+  },
+  {
+    "model": "orders.order",
+    "pk": 2,
+    "fields": {
+      "created_at": "2025-02-16T11:00:00Z",
+      "user": 2
+    }
+  },
+  {
+    "model": "orders.order",
+    "pk": 3,
+    "fields": {
+      "created_at": "2025-02-17T12:00:00Z",
+      "user": 3
+    }
+  },
+  {
+    "model": "orders.order",
+    "pk": 4,
+    "fields": {
+      "created_at": "2025-02-18T13:00:00Z",
+      "user": 4
+    }
+  },
+  {
+    "model": "orders.order",
+    "pk": 5,
+    "fields": {
+      "created_at": "2025-02-19T14:00:00Z",
+      "user": 5
+    }
+  },
+  {
+    "model": "orders.order",
+    "pk": 6,
+    "fields": {
+      "created_at": "2025-02-20T15:00:00Z",
+      "user": 1
+    }
+  },
+  {
+    "model": "orders.order",
+    "pk": 7,
+    "fields": {
+      "created_at": "2025-02-21T09:00:00Z",
+      "user": 2
+    }
+  },
+  {
+    "model": "orders.order",
+    "pk": 8,
+    "fields": {
+      "created_at": "2025-02-22T08:00:00Z",
+      "user": 3
+    }
+  },
+  {
+    "model": "orders.order",
+    "pk": 9,
+    "fields": {
+      "created_at": "2025-02-23T07:00:00Z",
+      "user": 4
+    }
+  },
+  {
+    "model": "orders.order",
+    "pk": 10,
+    "fields": {
+      "created_at": "2025-02-24T06:00:00Z",
+      "user": 5
+    }
+  },
+  {
+    "model": "orders.ticket",
+    "pk": 1,
+    "fields": {
+      "cargo": 1,
+      "seat": 5,
+      "trip": 1,
+      "order": 1
+    }
+  },
+  {
+    "model": "orders.ticket",
+    "pk": 2,
+    "fields": {
+      "cargo": 2,
+      "seat": 12,
+      "trip": 1,
+      "order": 1
+    }
+  },
+  {
+    "model": "orders.ticket",
+    "pk": 3,
+    "fields": {
+      "cargo": 1,
+      "seat": 8,
+      "trip": 2,
+      "order": 2
+    }
+  },
+  {
+    "model": "orders.ticket",
+    "pk": 4,
+    "fields": {
+      "cargo": 3,
+      "seat": 20,
+      "trip": 2,
+      "order": 2
+    }
+  },
+  {
+    "model": "orders.ticket",
+    "pk": 5,
+    "fields": {
+      "cargo": 4,
+      "seat": 15,
+      "trip": 3,
+      "order": 3
+    }
+  },
+  {
+    "model": "orders.ticket",
+    "pk": 6,
+    "fields": {
+      "cargo": 2,
+      "seat": 30,
+      "trip": 3,
+      "order": 3
+    }
+  },
+  {
+    "model": "orders.ticket",
+    "pk": 7,
+    "fields": {
+      "cargo": 1,
+      "seat": 1,
+      "trip": 4,
+      "order": 4
+    }
+  },
+  {
+    "model": "orders.ticket",
+    "pk": 8,
+    "fields": {
+      "cargo": 2,
+      "seat": 25,
+      "trip": 5,
+      "order": 5
+    }
+  },
+  {
+    "model": "orders.ticket",
+    "pk": 9,
+    "fields": {
+      "cargo": 3,
+      "seat": 10,
+      "trip": 6,
+      "order": 6
+    }
+  },
+  {
+    "model": "orders.ticket",
+    "pk": 10,
+    "fields": {
+      "cargo": 1,
+      "seat": 18,
+      "trip": 7,
+      "order": 7
+    }
+  }
+]
